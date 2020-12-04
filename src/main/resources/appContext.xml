@@ -2,5 +2,23 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="simpleBean" class="com.luv2code.springconfig.xmltype.SimpleBean"></bean>
+
+    <!--  Creating beans with constructor DI  -->
+    <bean id="cat" class="com.luv2code.springconfig.xmltype.Cat">
+        <constructor-arg name="type" value="Cat"/>
+    </bean>
+    <bean id="bird" class="com.luv2code.springconfig.xmltype.Bird">
+        <constructor-arg name="type" value="Bird"/>
+    </bean>
+
+    <!--  Creating beans with setter DI  -->
+    <bean id="personWithCat" class="com.luv2code.springconfig.xmltype.Person">
+        <property name="name" value="Jhon"/>
+        <property name="animal" ref="cat"/>
+    </bean>
+    <bean id="personWithBird" class="com.luv2code.springconfig.xmltype.Person">
+        <property name="name" value="Jane"/>
+        <property name="animal" ref="bird"/>
+    </bean>
+
 </beans>
