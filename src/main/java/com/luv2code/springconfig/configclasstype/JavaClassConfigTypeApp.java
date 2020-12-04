@@ -21,10 +21,12 @@ public class JavaClassConfigTypeApp {
         }
 
         /** Creating some persons with some animals and ask them introduce themselfs*/
-        Person personWithCat = context.getBean("personWithCat",Person.class);
-        Person personWithBird = context.getBean("personWithBird",Person.class);
+        Person personWithCat = context.getBean("personWithCat", Person.class);
+        Person personWithBird = context.getBean("personWithBird", Person.class);
 
         personWithCat.introduce();
         personWithBird.introduce();
+
+        context.close();
     }
 }

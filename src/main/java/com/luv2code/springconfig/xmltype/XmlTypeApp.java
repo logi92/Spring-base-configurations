@@ -27,6 +27,6 @@ public class XmlTypeApp {
         personWithCat.introduce();
         personWithBird.introduce();
 
-
+        context.close();
     }
 }
